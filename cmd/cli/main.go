@@ -1,11 +1,10 @@
 package main
 
 import (
-	restful_adapter "github.com/tahadostifam/go-hexagonal-architecture/internal/adapters/primary/restful"
+	cli_adapter "github.com/tahadostifam/go-hexagonal-architecture/internal/adapters/primary/cli"
 	sqlite_adapter "github.com/tahadostifam/go-hexagonal-architecture/internal/adapters/secondary/sqlite"
 	user_service "github.com/tahadostifam/go-hexagonal-architecture/internal/core/services/user"
 	"github.com/tahadostifam/go-hexagonal-architecture/utils"
-
 	"gorm.io/driver/sqlite"
 )
 
@@ -21,9 +20,7 @@ func main() {
 	userService := user_service.NewService(userRepo)
 
 	// Init primary adapters
-	app := restful_adapter.NewApp(restful_adapter.ServicesApi{
+	cli_adapter.NewCLIAdapter(&cli_adapter.ServicesApi{
 		UserApi: userService,
 	})
-	err = app.Run()
-	utils.HandleError(err)
 }

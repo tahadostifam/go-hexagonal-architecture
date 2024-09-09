@@ -3,7 +3,7 @@ package user_service
 import (
 	"context"
 
-	"github.com/samverrall/hex-structure/internal/core/domain/user"
+	"github.com/tahadostifam/go-hexagonal-architecture/internal/core/domain/user"
 )
 
 type Api interface {

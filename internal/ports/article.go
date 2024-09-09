@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/samverrall/hex-structure/internal/core/domain/article"
+	"github.com/tahadostifam/go-hexagonal-architecture/internal/core/domain/article"
 )
 
 var (

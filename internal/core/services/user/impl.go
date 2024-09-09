@@ -4,15 +4,15 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/samverrall/hex-structure/internal/core/domain/user"
-	"github.com/samverrall/hex-structure/internal/ports"
+	"github.com/tahadostifam/go-hexagonal-architecture/internal/core/domain/user"
+	"github.com/tahadostifam/go-hexagonal-architecture/internal/ports"
 )
 
 type Service struct {
-	userRepo ports.UserRepository
+	userRepo ports.UserRepositorySecondaryPort
 }
 
-func NewService(userRepo ports.UserRepository) *Service {
+func NewService(userRepo ports.UserRepositorySecondaryPort) *Service {
 	return &Service{userRepo}
 }
 

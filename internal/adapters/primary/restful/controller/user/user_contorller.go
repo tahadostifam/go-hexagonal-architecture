@@ -2,8 +2,8 @@ package user_controller
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/samverrall/hex-structure/internal/core/domain/user"
-	user_service "github.com/samverrall/hex-structure/internal/core/services/user"
+	"github.com/tahadostifam/go-hexagonal-architecture/internal/core/domain/user"
+	user_service "github.com/tahadostifam/go-hexagonal-architecture/internal/core/services/user"
 )
 
 func CreateAccount(userApi user_service.Api) fiber.Handler {

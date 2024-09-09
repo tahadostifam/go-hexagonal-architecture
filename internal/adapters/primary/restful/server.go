@@ -4,23 +4,24 @@ import (
 	"fmt"
 
 	"github.com/gofiber/fiber/v2"
-	user_service "github.com/samverrall/hex-structure/internal/core/services/user"
+	user_service "github.com/tahadostifam/go-hexagonal-architecture/internal/core/services/user"
 )
 
-type ServiceApi struct {
+type ServicesApi struct {
 	UserApi user_service.Api
 }
 
 type App struct {
-	fiber      *fiber.App
-	port       int
-	serviceApi ServiceApi
+	fiber       *fiber.App
+	port        int
+	servicesApi ServicesApi
 }
 
-func NewApp(serviceApi ServiceApi, opts ...AppOption) *App {
+func NewApp(servicesApi ServicesApi, opts ...AppOption) *App {
 	s := &App{
-		serviceApi: serviceApi,
-		port:       8000,
+		fiber:       fiber.New(),
+		servicesApi: servicesApi,
+		port:        8000,
 	}
 
 	for _, applyOption := range opts {
