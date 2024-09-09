@@ -6,12 +6,16 @@ import (
 
 type User struct {
 	ID       uuid.UUID
+	Name     string
 	Username Username
+	Age      int
 }
 
-func New(un Username) User {
+func New(name string, username Username, age int) User {
 	return User{
 		ID:       uuid.New(),
-		Username: un,
+		Name:     name,
+		Username: username,
+		Age:      age,
 	}
 }
